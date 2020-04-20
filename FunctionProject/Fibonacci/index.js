@@ -2,7 +2,9 @@ var bigInt = require("big-integer");
 module.exports = async function (context, req) {
     context.log('JavaScript HTTP trigger function processed a request.');
 
+    
     let nth = req.body.nth
+    /*
     let nth_1 = bigInt.one;
     let nth_2 = bigInt.zero;
     let answer = bigInt.zero;
@@ -20,8 +22,19 @@ module.exports = async function (context, req) {
             nth_1 = answer
         }
     }
+    */
+
+    const fibonacci = (num, memo) => {
+        memo = memo || {};
+ 
+        if (memo[num]) return memo[num];
+        if (num < 2) return num;
+ 
+        return memo[num] = fibonacci(num - 1, memo) + fibonacci(num - 2, memo);
+    };
 
     context.res = {
-        body: answer.toString()
+        body: fibonacci(nth)
+        //answer.toString()
     };
 }
