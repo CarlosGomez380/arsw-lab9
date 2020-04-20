@@ -42,10 +42,48 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
 **Preguntas**
 
 * ¿Qué es un Azure Function?
+
+Azure Function es una solución para ejecutar fácilmente pequeños fragmentos de código o “funciones” en la nube. 
+
+Tiene como ventajas:
+
+Codificar todo el código que necesitemos para el problema / acción que se quiere ejecutar sin preocuparnos de la aplicación o la infraestructura para ejecutarlo.
+
+Hace que el desarrollo sea más productivo.
+
+Podemos codificar en diferentes lenguajes de programación, como C#, F#, Node.js, Java o PHP.
+
+Nos permite desarrollar aplicaciones sin servidor en Microsoft Azure.
+
 * ¿Qué es serverless?
+
+La computación sin servidor (o serverless para abreviar) es un modelo de ejecución en el que el proveedor en la nube (AWS, Azure o Google Cloud) es responsable de ejecutar un fragmento de código mediante la asignación dinámica de los recursos. Y cobrando solo por la cantidad de recursos utilizados para ejecutar el código. El código, generalmente, se ejecuta dentro de contenedores sin estado que pueden ser activados por una variedad de eventos que incluyen solicitudes HTTP, eventos de base de datos, servicios de colas, alertas de monitoreo, carga de archivos, eventos programados (trabajos cron), etc. El código que se envía a al proveedor en la nube para la ejecución es generalmente en forma de una función. Por lo tanto, serverless a veces se denomina “Funciones como servicio” o “FaaS”.
+
 * ¿Qué es el runtime y que implica seleccionarlo al momento de crear el Function App?
+
+Runtime utiliza un modelo de extensibilidad de lenguaje, y todas las funciones de una aplicación de funciones deben compartir el mismo lenguaje. El lenguaje de las funciones en una aplicación de función se elige al crear la aplicación y se actualiza en el ajuste FUNCTIONS_WORKER_RUNTIME. La versión 1x no acepta Java, PowerShell, Python, solamente las versiones 2x y 3x.
+
 * ¿Por qué es necesario crear un Storage Account de la mano de un Function App?
-* ¿Cuáles son los tipos de planes para un Function App?, ¿En qué se diferencias?, mencione ventajas y desventajas de cada uno de ellos.
+
+Es necesario porque Functions se basa en Azure Storage para operaciones como la gestión de los disparadores y el registro de las ejecuciones de la función. La aplicación de funciones puede utilizar los siguientes servicios de almacenamiento: Azure Blob storage, Azure Files, Azure Queue storage, Azure Table storage.
+
 * ¿Por qué la memoization falla o no funciona de forma correcta?
+
+
+
 * ¿Cómo funciona el sistema de facturación de las Function App?
+
+El modelo de facturación de Azure Function consiste en calcular el tiempo de ejecución del recurso en segundos y multiplicarlo por consumo de recursos convertido en GB, el resusltado será multiplicado por el valor o precio del recurso para tener un valor total del consumo, por último se suma el valor de mensual que cobran por ejecución. 
+
 * Informe
+
+Para este informe se creó una nueva colección en postman.
+
+En la siguiente imagen se muestran los casos usados, donde dice serie y un numero "x" representa el caso donde a la variable "nth" le corresponde el valor x:
+
+![](https://github.com/CarlosGomez380/arsw-lab9/blob/master/images/Serie1.PNG)
+
+Por último, vemos la tabla que se ejecuta al usar NEWMAN en el que se muestran el numero de casos aplicados y cuales fallas o son aceptados junto con el tiempo de respuesta.
+
+![](https://github.com/CarlosGomez380/arsw-lab9/blob/master/images/Serie2.PNG)
+
