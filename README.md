@@ -77,7 +77,7 @@ El modelo de facturación de Azure Function consiste en calcular el tiempo de ej
 
 * Informe
 
-Para este informe se creó una nueva colección en postman.
+Para este informe se creó una nueva colección en postman con 10 casos de prueba. Esta se ejecutó en 10 consolas diferentes para que sea de forma concurrente. A continuación se verán imagenes de los resultados de una sola consola.
 
 En la siguiente imagen se muestran los casos usados, donde dice serie y un numero "x" representa el caso donde a la variable "nth" le corresponde el valor x:
 
